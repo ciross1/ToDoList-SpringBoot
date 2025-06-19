@@ -1,0 +1,8 @@
+1- Create folders of models, controllers, data....
+2-Create a database in mysql and write the properties including the hibernate.
+
+And what is Hibernate? That block of configuration is for JPA (Java Persistence API) and Hibernate,
+which is the default ORM (Object-Relational Mapping) tool used by Spring Boot. Here's what each setting does:
+This setting controls how Hibernate automatically handles your database schema (tables, columns, etc.) based
+ on your Java entity classes.
+

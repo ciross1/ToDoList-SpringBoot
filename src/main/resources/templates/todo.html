@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html  layout:decorate="layouts/defaultLayout"
+       lang="en"
+       xmlns:th="http://www.thymeleaf.org"
+       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">>>
+<head >
+	 <meta charset="UTF-8">
+	 <title ></title >
+</head >
+<body >
+<div layout:fragment="content"  class="mt-3 ms-3" >
+  
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Assignment</th>
+      <th scope="col">Date</th>
+      <th scope="col">Description</th>
+    </tr>
+    </thead>
+    <tbody class="table-group-divider">
+    <tr th:each="list : ${lists}">
+      <th th:text = "${list.id}">1</th>
+      <td  th:text = "${list.assignment}">Mark</td>
+      <td  th:text = "${list.date}">Otto</td>
+      <td  th:text = "${list.description}">@mdo</td>
+      <td></td>
+    </tr>
+    </tbody>
+  </table>
+
+
+</div>
+</body >
+</html >

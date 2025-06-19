@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html
+     lang="en"
+     xmlns:th="http://www.w3.org/1999/xhtml"
+     layout:decorate="~{layouts/defaultLayout}"
+     xmlns:layout="http://www.w3.org/1999/xhtml"
+     
+     
+>
+<head >
+  <meta charset="UTF-8">
+  <title >Title</title >
+  
+  <!-- Extra CSS for datepicker -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+</head >
+<body >
+
+<div layout:fragment="content">
+  <div class="container mt-3 mb-3">
+    <form th:action="@{/todo/date/found}" method="post" th:object="${list}">
+      <div class="container mt-4">
+        <label for="date">Select a date:</label>
+        <input th:field="*{date}" type="date" class="form-control" id="date">
+      </div>
+      <div id="searchHelp" class="form-text">search the date</div>
+      <button type="submit" class="btn btn-primary">Search by date</button>
+    </form>
+  </div>
+</div>
+<!-- Page-specific scripts in this case for the date picker -->
+<section layout:fragment="scripts">
+  
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  
+  
+  <!-- This code is made through jquery library/framework:  necessary for the datePicker-->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+			flatpickr("#date", {
+				dateFormat: "Y-m-d",
+				// other options like autoclose are built-in
+			});
+		});
+  </script>
+</section>
+</body >
+</html >
